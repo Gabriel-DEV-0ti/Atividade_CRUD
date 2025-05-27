@@ -8,12 +8,25 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class ItensComprasServicer {
     @Autowired
     private ItensComprasRepository repository;
 
-    public List <ItensComprasModel> listarTodos(){return repository.findAll();}
-    public Optional <ItensComprasModel> buscarPorID(Long id){return repository.findById(id);}
-    public ItensComprasModel salvatItens(ItensComprasModel itens){return repository.save(itens);}
-    public void deletarItens(Long id){repository.deleteById(id);}
+    public List <ItensComprasModel> listarTodos(){
+        return repository.findAll();
+    }
+
+    public Optional <ItensComprasModel> buscarPorID(Long id){
+        return repository.findById(id);
+    }
+
+    public ItensComprasModel salvatItens(ItensComprasModel itensComprasModel){
+        return repository.save(itensComprasModel);
+    }
+    
+    public void deletarItens(Long id){
+        repository.deleteById(id);
+    }
 }
